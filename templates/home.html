@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Paws Rescue Center</title>
-</head>
-
-<body>
+{% extends "base.html" %} 
+{% block title %}Home - Paws Rescue Center {% endblock %} 
+{% block content %}
     <h1 id="title">
         <center>Paws Rescue Center 🐾</center>
     </h1>
@@ -23,14 +15,13 @@
         <tr>
             <td>
                 <a href="{{url_for('details', pet_id = pet['id'])}}">
-                    <img src="{{url_for( 'static', filename='%d.jpg' %pet[ 'id'])}}" height="100" width="100"></td>
-            </a>
+                    <img src="{{url_for( 'static', filename='%d.jpg' %pet[ 'id'])}}" height="100" width="100">
+                </a>
+            </td>
             <td>{{pet['name']}}</td>
             <td>{{pet['age']}}</td>
             <td>{{pet['bio']}}</td>
         </tr>
         {% endfor %}
     </table>
-</body>
-
-</html>
+{% endblock %}

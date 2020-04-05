@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    {% block imports %}
+    <!-- place holder for another imports -->
+    {% endblock %}
+    <title>{% block title %}<!--place holder for  title page-->{% endblock %}</title>
+</head>
+
+<body{% block body_style %}{% endblock %}>
+    {% block content %}
+    <!-- place holder for content-->
+    {% endblock %}
+</body>
+
+</html>
