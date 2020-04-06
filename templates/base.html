@@ -9,6 +9,16 @@
     <!-- place holder for another imports -->
     {% endblock %}
     <title>{% block title %}<!--place holder for  title page-->{% endblock %}</title>
+    <ul>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('about')}}">About</a></li>
+        {% if 'user' in session %}
+            <li style="display:inline"><a href="{{url_for('logout')}}">Log Out</a></li>
+        {% else %}
+            <li style="display:inline"><a href="{{url_for('signup')}}">Sign Up</a></li>
+            <li style="display:inline"><a href="{{url_for('login')}}">Login</a></li>
+        {% endif%}
+    </ul>
 </head>
 
 <body{% block body_style %}{% endblock %}>
